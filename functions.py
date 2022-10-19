@@ -130,8 +130,8 @@ def set_x_values(choose: bool) -> list:
     
     else:
 
-        xi = float(input('Elija un tiempo inicial (segundos): '))
-        xf = float(input('Elija un tiempo final (segundos): '))
+        xi = float(input('Elija un valor (x) inicial: '))
+        xf = float(input('Elija un valor (x) final: '))
         jump = float(input('Elija el salto de los valores: '))
 
         x = numpy.arange(xi, xf + jump, jump)

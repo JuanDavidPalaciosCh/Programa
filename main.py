@@ -1,4 +1,5 @@
 from lab_3 import lab_3
+from lab_4 import lab_4
 from functions import choose_lab
 
 
@@ -9,7 +10,7 @@ def main():
         if lab3:
             lab_3()
         else:
-            pass
+            lab_4()
 
 
 if __name__ == '__main__':

@@ -15,6 +15,7 @@ def graphic_maker():
         x = set_x_values(choose)
         have_line = tendence_line()
         make_all_graphics(x, have_line)
+        os.system("cls")
 
     elif selected:
         choose = mode_x_values()
