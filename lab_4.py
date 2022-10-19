@@ -1,9 +1,13 @@
 import os
+import math
 from matplotlib import pyplot as plt
 from functions import mode_x_values, set_x_values, tendence_line
 
 
-VARIABLES = ['h', 'x']
+VARIABLES: list = ['h', 'x']
+
+#Constante experimental del laboratorio
+a: float = 0.0064 
 
 
 def choose_simulation() -> bool:
@@ -26,13 +30,13 @@ def make_simulation():
 
     simulation_type: bool = choose_simulation()
     if simulation_type:
-        x: float = float(input('Elija una altura a simular (cm): '))
-        result: float = 1.64*x + 20.15
-        return result, 0, x
+        h: float = float(input('Elija una altura a simular (cm): '))
+        result: float = math.sqrt(h/a)
+        return result, 0, h
     else:
-        h: float = float(input('Elija un alcance maximo a simular (cm): '))
-        result: float = (h - 20.15) / 1.64
-        return result, 1, h
+        x: float = float(input('Elija un alcance maximo a simular (cm): '))
+        result: float = a * (x**2)
+        return result, 1, x
 
 
 def lab_4():
@@ -59,7 +63,7 @@ def lab_4():
             choose = mode_x_values()
             x = set_x_values(choose)
             have_line = tendence_line()
-            y = [(x[i] - 20.15) / 1.64 for i in range(len(x))]
+            y = [a * (x[i]**2) for i in range(len(x))]
 
             plt.plot(x, y, 'o{}'.format(have_line), color='green')
             plt.xlabel('Alcance x (cm)')

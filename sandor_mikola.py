@@ -1,6 +1,5 @@
 from functions import *
 import matplotlib.pyplot as plt
-import numpy
 
 
 def initialize_sandor():
