@@ -1,8 +1,8 @@
 <center><h1><strong> Simulaciones de fundamentos de mecanica:</strong></h1>
 
 
-<h3><em>Creado por: Juan David Palacios, Gabriel Mauricio Estupiñan y Andres Fernando Acosta</em></h3>
-<h4 style="color:#999999"> jpalaciosch@unal.edu.co, gestupinanp@unal.edu.co , anacostaz </h4></center>
+<h3><em>Creado por: Juan David Palacios, Gabriel Mauricio Estupiñan, Andres Fernando Acosta y Miguel Botiva</em></h3>
+<h4 style="color:#999999"> jpalaciosch@unal.edu.co, gestupinanp@unal.edu.co , anacostaz@unal.edu.co, jbotiva@unal.edu.co</h4></center>
 <hr size="8px" color ="Red"/>
 <h3 style="color:#FF0000">Funcionamiento del programa: </h3>
 <p>Este programa recopila los laboratorios de Fundamentos de mecanica, permitiendonos, a partir de los datos experimentales poder predecir datos de ciertos tiempos o posiciones especificas de los experimentos.</p>
@@ -33,13 +33,13 @@ Estas son las variables que se pueden cambiar segun el resultado que se busque, 
         <li>'xi' es la distancia inicial.</li>
         <li>'de' es el promedio de la desviacion estandar.</li>
     </ul>
-    <li> En la funcion initialize_sandor que se encuentra en sandor_mikola.py se pueden cambiar los valores experimentales:<li>
+        <li> En la funcion initialize_sandor que se encuentra en sandor_mikola.py se pueden cambiar los valores experimentales:</li>
     <ul>
-        <li>'m' es la pendiente.<li>
-        <li>'b' es el origen.<li>
+        <li>'m' es la pendiente.</li>
+        <li>'b' es el origen.</li>
     </ul>
-    <li> En el archivo lab_4 se puede modificar:<li>
+        <li> En el archivo lab_4 se puede modificar:</li>
     <ul>
-        <li>'a' que es la constante experimental del laboratorio.<li>
+        <li>'a' que es la constante experimental del laboratorio.</li>
     </ul>
 </ol>
