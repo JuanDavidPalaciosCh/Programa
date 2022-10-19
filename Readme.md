@@ -2,7 +2,7 @@
 
 
 <h3><em>Creado por: Juan David Palacios, Gabriel Mauricio Estupiñan y Andres Fernando Acosta</em></h3>
-<h4 style="color:#999999"> jpalaciosch@unal.edu.co, gestupinanp@unal.edu.co , anacostaz </h4></center>
+<h4 style="color:#999999"> jpalaciosch@unal.edu.co, gestupinanp@unal.edu.co, anacostaz@unal.edu.co </h4></center>
 <hr size="8px" color ="Red"/>
 <h3 style="color:#FF0000">Funcionamiento del programa: </h3>
 <p>Este programa recopila los laboratorios de Fundamentos de mecanica, permitiendonos, a partir de los datos experimentales poder predecir datos de ciertos tiempos o posiciones especificas de los experimentos.</p>
