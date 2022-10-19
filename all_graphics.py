@@ -5,6 +5,14 @@ from constants import ROWS
 
 
 def make_all_graphics(x: list, have_line: str):
+
+    """Genera todas las graficas del laboratorio 3 en una sola ventana: Sandor Mikola,
+     Pista de carros 4, 8 y 12 grados para un mismo conjunto de valores del eje x.
+
+    Parameters:
+        x list: Valores para el eje x.
+        have_line str: Determina la existencia de linea de tendencia.
+    """
     x_table = ["{:.1f}".format(x[i]) for i in range(len(x))]
 
     fig = plt.figure(figsize=(30,30))

@@ -3,6 +3,14 @@ import matplotlib.pyplot as plt
 
 
 def initialize_sandor():
+
+    """Inicializa valores utilizados para el experimento del tubo de Sandor Mikola.
+
+    Returns:
+        m float: Pendiente de la grafica.
+        b float: Error en valores.
+    """
+
     m: float = 1.9274
     b: float = -1.7911
 
@@ -10,6 +18,15 @@ def initialize_sandor():
 
 
 def sandor_mikola():
+    
+    """Halla valores para el experimento del tubo de Sandor Mikola.
+
+    Returns:
+        result float: Resultado de la simulación.
+        int: determina que tipo de dato utilizar para mostrar al usuario lo obtenido.
+        x float: Distancia utilizada en la simulación.
+        t float: Tiempo utilizado en la simulación.
+    """
     m, b = initialize_sandor()
 
     simulation_type: bool = choose_simulation()
@@ -24,6 +41,14 @@ def sandor_mikola():
 
 
 def create_graphic_sandor(x: list, have_line: str):
+
+    """Crea la grafica del experimento del tubo de Sandor Mikola.
+
+    Parameters:
+        x list: Valores del eje x.
+        have_line: Existencia de linea de tendencia.
+    """
+
     m, b = initialize_sandor()
 
     y = [round(m * x[i]  + b, 2) for i in range(len(x))]

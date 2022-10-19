@@ -3,35 +3,60 @@ import math
 
 
 def initialize_speedway(degrees: int=None):
-        if degrees == None:
-            degrees:int = choose_degrees()
 
-        if degrees == 4:
-            a: float = 1.91
-            vi: float = 67.61
-            xi: float = -31.72
-            de: float = 0.05
+    """Initializa valores para el experimento de pista de carros inclinada.
 
-        elif degrees == 8:
-            a: float = 47.02
-            vi: float = 35.55
-            xi: float = -8.5
-            de: float = 0.0357
+    Parameters:
+        degrees int: Grados utilizados para los valores.
 
-        elif degrees == 12:
-            a: float = 40.52
-            vi: float = 70.21
-            xi: float = -13.03
-            de: float = 0.02
+    Returns:
+        a float: 1/2 de la aceleración.
+        vi float: Velocidad inicial.
+        xi float: Distancia inicial.
+        de float: Promedio desviación estándar.
+        degrees int: Grados utilizados para selección de datos.
+    """
+        
+    if degrees == None:
+        degrees:int = choose_degrees()
 
-        else:
-            print('Grados seleccionados no validos...')
-            return initialize_speedway()
+    if degrees == 4: #Valores para 4° de inclinación.
+        a: float = 1.91
+        vi: float = 67.61
+        xi: float = -31.72
+        de: float = 0.05
 
-        return a, vi, xi, de, degrees
+    elif degrees == 8: #Valores para 8° de inclinación.
+        a: float = 47.02
+        vi: float = 35.55
+        xi: float = -8.5
+        de: float = 0.0357
+
+    elif degrees == 12: #Valores para 12° de inclinación.
+        a: float = 40.52
+        vi: float = 70.21
+        xi: float = -13.03
+        de: float = 0.02
+
+    else:
+        print('Grados seleccionados no validos...')
+        return initialize_speedway()
+
+    return a, vi, xi, de, degrees
 
 
 def inclinated_speedway():
+
+    """Halla valores para el experimento de la pista de carros inclinada.
+
+    Returns:
+        result float: Resultado de la simulación.
+        int: determina que tipo de dato utilizar para mostrar al usuario lo obtenido.
+        x float: Distancia utilizada en la simulación.
+        t float: Tiempo utilizado en la simulación.
+        degrees int: Grados de inclinación utilizados en la simulación.
+    """
+
     a, vi, xi, de, degrees = initialize_speedway()
 
     simulation_type: bool = choose_simulation()
@@ -49,6 +74,18 @@ def inclinated_speedway():
 
 
 def create_graphic_car(x: list, a: float, vi: float, xi: float, de: float, degrees: int, have_line: str):
+
+    """Crea la grafica del experimento de pista de carros inclinada.
+
+    Parameters:
+        x list: Valores del eje x.
+        a float: 1/2 de la aceleración.
+        vi float: Velocidad inicial.
+        xi float: Distancia inicial.
+        de float: Promedio desviación estándar.
+        have_line: Existencia de linea de tendencia.
+    """
+
     xi -= de
     y = [round((a*(x[i]**2)) + (vi * x[i]) + xi, 2) for i in range(len(x))]
     x_table = ["{:.1f}".format(x[i]) for i in range(len(x))]

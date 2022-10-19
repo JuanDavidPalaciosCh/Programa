@@ -6,8 +6,12 @@ from all_graphics import make_all_graphics
 
 
 def graphic_maker():
+    
+    """Entra en el modo para crear graficas.
+    """
+
     print('Elija [a] para mostrar todas las graficas en un conjunto de valores x')
-    selected = choose_mode()
+    selected: bool = choose_mode()
     os.system("cls")
 
     if selected == 'a':

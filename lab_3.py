@@ -4,6 +4,10 @@ from graphic_maker import graphic_maker
 
 
 def lab_3():
+
+    """Bucle principal de laboratorio 3 (movimiento en una dimensión)
+    """
+
     while True:
         os.system("cls")
         graphic_mode: bool = False

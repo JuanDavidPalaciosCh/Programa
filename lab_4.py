@@ -11,6 +11,13 @@ a: float = 0.0064
 
 
 def choose_simulation() -> bool:
+
+    """Pregunta al usuario que variable desea hallar (Alcance maximo o altura).
+
+    Returns:
+        simulation bool: define la selección
+    """
+
     simulation: bool = False
     simulator_type: str = input('Elija la variable a hallar... [x] Alcance maximo con respecto a la altura, [h] altura con respecto al alcance maximo: ')
 
@@ -28,6 +35,14 @@ def choose_simulation() -> bool:
 
 def make_simulation():
 
+    """Halla valores resultantes para la simulación del laboratorio 4.
+
+    Returns:
+        result float: Resultado de la simulación.
+        int: determina que tipo de dato utilizar para mostrar al usuario lo obtenido.
+        h float: Altura utilizada en la simulación.
+        x float: Alcance maximo utilizado en la simulación.
+    """
     simulation_type: bool = choose_simulation()
     if simulation_type:
         h: float = float(input('Elija una altura a simular (cm): '))
@@ -40,6 +55,10 @@ def make_simulation():
 
 
 def lab_4():
+
+    """Bucle principal de laboratorio 4 (movimiento en dos dimensiones)
+    """
+    
     while True:
         os.system("cls")
         graphic_mode: bool = False

@@ -6,6 +6,10 @@ from functions import choose_mode
 
 
 def simulator():
+
+    """Entra en el modo simulador en el que se puede encontrar valores aislados de los distintos experimentos.
+    """
+
     end = False
 
     while not end:

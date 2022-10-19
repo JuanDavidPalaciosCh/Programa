@@ -5,8 +5,15 @@ from constants import LINE, NOT_LINE, ROWS
 
 
 def choose_lab() -> bool:
+    
+    """Pregunta al usuario que laboratorio desea utilizar en el programa (laboratorio 3 o 4).
+
+    Returns:
+        choose bool: define la selección
+    """
+
     choose: bool = False
-    lab: str = input('Elija el laboratorio a usar: \n[3] Laboratorio 3: Movimiento unidimensional \n[4] Laboratorio 4: Movimiento en dos dimensiones \n \n')
+    lab: str = input('Simulador realizado por:\n Juan David palacios \n Gabriel Mairicio Estupiñan \n Andrés Acosta \n Miguel Botiva \n Grupo 1 \n\n Elija el laboratorio a usar: \n[3] Laboratorio 3: Movimiento unidimensional \n[4] Laboratorio 4: Movimiento en dos dimensiones \n \n')
     os.system("cls")
 
     if lab != '3' and lab != '4':
@@ -19,6 +26,13 @@ def choose_lab() -> bool:
 
 
 def choose_mode() -> bool: 
+
+    """Pregunta al usuario que modo desea utilizar en el programa (sandor mikola o pista de carros inclinada).
+
+    Returns:
+        choose bool: define la selección
+    """
+
     choose: bool = False
     simulator: str = input('Elija el experimento a usar... [t] tubo sandor mikola, [p] pista de carros inclinada: ')
 
@@ -38,6 +52,13 @@ def choose_mode() -> bool:
 
 
 def choose_simulation() -> bool:
+
+    """Pregunta al usuario que variable desea hallar (tiempo o distancia).
+
+    Returns:
+        simulation bool: define la selección
+    """
+
     simulation: bool = False
     simulator_type: str = input('Elija la variable a hallar... [t] tiempo con respecto a distancia, [x] distancia con respecto a tiempo: ')
 
@@ -53,7 +74,15 @@ def choose_simulation() -> bool:
     return simulation
 
 
-def choose_degrees() -> float:
+def choose_degrees() -> int:
+    
+    """Pregunta al usuario que valor de inclinación desea para la pista de carros entre 4, 8 o 12 grados,
+    cambiando con la inclinación el resultado final de los valores.
+
+    Returns:
+        inclination int: Grados de inclinación para cambiar variables de cada simulación.
+    """
+
     inclination: int = int(input('Elija los grados de inclinación para la pista de carros entre (4, 8 y 12)°: '))
     if inclination != 4 and inclination != 8 and inclination != 12:
         input('Elija una inclinación valida, presione enter para continuar: ')
@@ -63,16 +92,39 @@ def choose_degrees() -> float:
 
 
 def choose_time() -> float:
+
+    """Inicializa un tiempo a usar escogido por el usuario para su posterior utilización.
+
+    Returns:
+        time float: Tiempo elegido por el usuario para utilizar.
+    """
+
     time: float = float(input('Elija un tiempo a simular (segundos): '))
     return time
 
 
 def choose_distance() -> float:
+
+    """Inicializa una distancia a usar escogida por el usuario para su posterior utilización.
+
+    Returns:
+        distance float: Distania elegida por el usuario para utilizar.
+    """
+
     distance: float = float(input('Elija una distancia a simular (centimetros): '))
     return distance
 
 
 def tendence_line() -> str:
+
+    """Pregunta al usuario si desea elegir linea de tendencia, si la elección no está en las opciones el programa
+    eligirá por defecto sin linea de tendencia.
+
+    Returns:
+        LINE str: Determina existencia de linea de tendencia.
+        NOT_LINE str: Determina la ausencia de linea de tendencia.
+    """
+
     tendence_line = False
     with_line: str = input('Elija [l] si desea linea de tendencia, de lo contrario elija [n]: ')
 
@@ -89,6 +141,13 @@ def tendence_line() -> str:
 
 
 def mode_x_values():
+
+    """Pregunta al usuario si desea elegir cada valor para el eje x o hacerlo mediante un rango.
+
+    Returns:
+        choose bool: Determina la elección.
+    """
+
     choose: bool = False
     flag: str = input('Elegir valores [v], elegir rango de valores [r]: ')
 
@@ -105,6 +164,16 @@ def mode_x_values():
 
 
 def set_x_values(choose: bool) -> list:
+
+    """Recolección de datos para tabulación dados por el usuario.
+    
+    Parameters:
+        choose bool: Elección del usuario para determinar como tomar valores de x (valor por valor o rango de valores).
+
+    Returns:
+        x list: Valores del eje x en el grafico.
+    """
+
     os.system("cls")
     x = []
     if choose:
@@ -140,14 +209,17 @@ def set_x_values(choose: bool) -> list:
     return x
 
 
-def make_graphics(x, y, x_table, have_line, degrees=5):
+def make_graphics(x: list, y: list, x_table: list, have_line: str, degrees:int=5):
     
+    """Crea graficas con la librería matplotlib.
+
+    Parameters:
+        x list: valores del eje x.
+        y list: valores del eje y.
+        have_line str: existencia de linea de tendencia.
+        degrees int: grados de inclinación (por defecto 5).
     """
-    #Tabla de datos
-    fig, ax = plt.subplots()
-    the_table = ax.table(cellText=[x_table, y],loc='top', rowLabels=ROWS)
-    fig.tight_layout()
-    """
+
     plt.subplots_adjust(top=0.95, bottom=0.15, left=0.17)
     
     #Grafica
